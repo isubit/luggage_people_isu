@@ -16,8 +16,6 @@
  * there is no need to return $node from this hook.
  */
 function luggage_people_isu_node_presave($node) {
-  watchdog('luggage_people_isu', 'Applying profile tweaks');
-
   // Respond only to new nodes of type 'people' with street address.
   if (isset($node->is_new) && $node->type == 'people') {
     // ZIP+4 formatting: 500113222 becomes 50011-3222
