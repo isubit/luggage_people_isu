@@ -24,3 +24,11 @@ function luggage_people_isu_node_presave($node) {
     }
   }
 }
+
+/**
+ * Implements hook_update_projects_alter().
+ */
+function luggage_people_isu_update_projects_alter(&$projects) {
+  // Hide a site-specific module from the list.
+  unset($projects['luggage_people_isu']);
+}
